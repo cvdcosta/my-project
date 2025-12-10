@@ -1,5 +1,5 @@
-# Use a valid OpenJDK 11 image
-FROM openjdk:11-jre
+# Use a valid OpenJDK 11 JRE image
+FROM openjdk:11-jre-slim-bullseye
 
 # Expose the port your app will run on
 EXPOSE 8080
@@ -12,4 +12,3 @@ WORKDIR /usr/app
 
 # Run the jar
 ENTRYPOINT ["java", "-jar", "my-app-1.0-SNAPSHOT.jar"]
-
