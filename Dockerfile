@@ -1,13 +1,14 @@
 FROM eclipse-temurin:11-jre-alpine
 
-EXPOSE 8080
-
-# Copy ANY jar produced by Gradle
-COPY build/libs/*.jar /usr/app/app.jar
-
+# Set working directory
 WORKDIR /usr/app
 
+# Copy the JAR built by Gradle
+COPY build/libs/*.jar app.jar
+
+# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
+
 
 
 
